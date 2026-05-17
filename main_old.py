@@ -266,7 +266,7 @@ def run_sample_queries(retriever: Retriever, llm_client):
             print(response)
 
         except GuardrailException as e:
-            print(f"\n⛔ Guardrail Violation: {e}")
+            print(f"\n Guardrail Violation: {e}")
 
 
 def main():
@@ -279,15 +279,15 @@ def main():
 
     # Check for existing persisted data
     if os.path.exists(tree_path):
-        print(f"📂 Loading existing routing tree from {data_dir}...")
+        print(f"Loading existing routing tree from {data_dir}...")
         tree = RoutingTree.load(data_dir)
-        print("✅ Tree loaded from disk")
+        print("Tree loaded from disk")
     else:
-        print("📦 Building hierarchical routing tree from scratch...")
+        print("Building hierarchical routing tree from scratch...")
         tree = build_sample_tree()
-        print("💾 Persisting tree structure and vector stores...")
+        print("Persisting tree structure and vector stores...")
         tree.save(data_dir)
-        print("✅ Tree structure created and saved to disk")
+        print("Tree structure created and saved to disk")
         print("   - T-SQL Migration")
         print("   - Teradata Migration")
         print("   - General SQL Migration (default)")
@@ -319,7 +319,7 @@ def main():
     run_sample_queries(retriever, llm_client)
 
     print("\n" + "=" * 80)
-    print("✅ Demo completed successfully!")
+    print("Demo completed successfully!")
     print("=" * 80)
 
 
