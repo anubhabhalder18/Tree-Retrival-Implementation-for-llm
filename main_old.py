@@ -1,12 +1,4 @@
-"""
-Main demo script: Instantiates a sample tree, adds FAQs and guardrails, runs queries.
 
-This demonstrates the complete tree-structured vector retrieval system with:
-- Hierarchical routing tree (3 levels)
-- FAQ stores in leaf nodes
-- Guardrail stores for blocked topics
-- Full retrieval pipeline with cosine similarity search
-"""
 
 import os
 from tree import TreeNode, LeafNode, RoutingTree
@@ -16,30 +8,8 @@ from llm_client import create_llm_client
 
 
 def build_sample_tree() -> RoutingTree:
-    """
     
-
-    Structure:
-    Root (product: cmaap)
-    ├─ SQL Migration
-    │  ├─ T-SQL (dialect: tsql)
-    │  │  └─ [Leaf] FAQ & Guardrail stores
-    │  ├─ Teradata (dialect: teradata)
-    │  │  └─ [Leaf] FAQ & Guardrail stores
-    │  └─ Default (general SQL guidance)
-    │     └─ [Leaf] FAQ & Guardrail stores
-    ├─ SSIS Migration
-    │  └─ [Leaf] FAQ & Guardrail stores
-    └─ Default (general CMaaP)
-       └─ [Leaf] FAQ & Guardrail stores
-
-    Returns:
-        RoutingTree instance with populated FAQs and guardrails
-    """
-
-    # ============================================================================
-    # LEAF 1: T-SQL Migration
-    # ============================================================================
+    #tsql
     tsql_faq = VectorStore("tsql_faq")
     tsql_faq.add(
         "How do I convert SQL Server CAST to standard SQL?",
@@ -73,9 +43,7 @@ def build_sample_tree() -> RoutingTree:
         leaf=tsql_leaf,
     )
 
-    # ============================================================================
-    # LEAF 2: Teradata Migration
-    # ============================================================================
+
     teradata_faq = VectorStore("teradata_faq")
     teradata_faq.add(
         "How do I convert Teradata CAST functions?",
@@ -335,16 +303,16 @@ def main():
         theta_collapse=0.95,  # Collapse filter threshold
         pick_threshold=0.3,  # Minimum similarity to include FAQ
     )
-    print("✅ Retriever initialized")
+    print("Retriever initialized")
     print(f"   - k = {retriever.k} FAQs to retrieve")
     print(f"   - Guardrail threshold = {retriever.theta_guard}")
     print(f"   - Collapse filter threshold = {retriever.theta_collapse}")
     print(f"   - Pick threshold = {retriever.pick_threshold}")
 
     # Initialize LLM client
-    print("\n💬 Initializing LLM client...")
+    print("\n itializing LLM client...")
     llm_client = create_llm_client("claude")
-    print(f"✅ LLM client ready (Provider: {llm_client.provider.value.upper()}, Model: {llm_client.model})")
+    print(f"LLM client ready (Provider: {llm_client.provider.value.upper()}, Model: {llm_client.model})")
 
     # Run sample queries
     print("\n📝 Running sample queries...\n")
