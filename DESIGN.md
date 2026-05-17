@@ -664,7 +664,7 @@ Guardrail: "delete" triggers block
 
 ---
 
-## 6. Future Enhancements (Bonus)
+## 6. Future Enhancements 
 
 1. **HNSW indexing** (see scaling section)
 2. **Multi-query fan-out** (route to multiple leaves if ambiguous)
