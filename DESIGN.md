@@ -8,7 +8,8 @@ FLOW OF WORKFLOW while making a query-
 
 Tree is queried -> Query goes through a domain partinized Tree -> Exact leafnode with matching metadata is selected -> The query is checked conisne similarity with FAQs the first k FAQS are passed to llm (exception if query matches GAURDRAIL it is terminated)
 
-![1778990896716](images/DESIGN/1778990896716.png)
+<img width="664" height="873" alt="image" src="https://github.com/user-attachments/assets/7929956f-bc86-42e3-8673-a2ea8f18c3e3" />
+
 
 ---
 
