@@ -1,2 +1,0 @@
-import fasttext as ft
-
