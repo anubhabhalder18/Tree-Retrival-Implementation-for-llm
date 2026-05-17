@@ -668,7 +668,8 @@ Guardrail: "delete" triggers block
 
 1. **HNSW indexing** (see scaling section)
 2. **Multi-query fan-out** (route to multiple leaves if ambiguous)
-3. **Persistence layer** (serialize tree to disk without pickle)
+3. **Persistence layer** (serialize tree to disk without pickle)-
+    for now json pydantic structures are saved inside as json files inside data folder. which are loaded inside the demo 
 4. **Evaluation harness** (measure precision@k on test set)
 5. **Query expansion** (rewrite query before retrieval for better recall)
 
