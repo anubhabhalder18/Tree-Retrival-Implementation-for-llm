@@ -672,6 +672,19 @@ Guardrail: "delete" triggers block
 4. **Evaluation harness** (measure precision@k on test set)
 5. **Query expansion** (rewrite query before retrieval for better recall)
 
+
+##Implementing HNSW
+-Hierarchical widening of level elemnts are done
+
+<img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/c7b6faa3-b060-4be9-bae4-e5af23015c3f" />
+
+The initial points and all are choosen using k means clustering 
+
+Greedy choice of Min(cosine_similarity) is assessed while choosing next node
+
+<img width="1180" height="1333" alt="image" src="https://github.com/user-attachments/assets/34762e30-773e-4c93-9a5d-4fa72de63c08" />
+
+
 ---
 
 ## Conclusion
