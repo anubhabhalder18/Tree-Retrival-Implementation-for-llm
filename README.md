@@ -684,6 +684,14 @@ Greedy choice of Min(cosine_similarity) is assessed while choosing next node
 
 <img width="1180" height="1333" alt="image" src="https://github.com/user-attachments/assets/34762e30-773e-4c93-9a5d-4fa72de63c08" />
 
+##Multi_fan_out Query-
+While Looking for k top Matches instead of Doing matching K times  while we are transversing from a point we select k closesnt nodes from that and continue
+<img width="1429" height="1600" alt="image" src="https://github.com/user-attachments/assets/d815b194-493b-4881-80f1-9cc6b090ca1d" />
+
+This way we dont have to search Whole stuff k times
+we can do parallel searching
+<img width="1402" height="1122" alt="image" src="https://github.com/user-attachments/assets/f0b0ce47-35ed-4b67-a1f6-6c7dfea78048" />
+
 
 ---
 
