@@ -26,6 +26,10 @@ Breaking down each phase:
 - **Path search**: O(T·C) in worst case (all children checked), but typically O(T) with early termination
 - **Conclusion**: O(T) or O(T·C) depending on branching strategy; negligible for typical trees
 
+<img width="1198" height="757" alt="image" src="https://github.com/user-attachments/assets/09336d8a-2d4d-4692-ab7f-046e74162b55" />
+
+
+
 #### Phase 2: Guardrail Check — O(G·D)
 
 - **G** = number of guardrail vectors
